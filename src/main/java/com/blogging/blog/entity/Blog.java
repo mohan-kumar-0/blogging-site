@@ -17,7 +17,7 @@ public class Blog {
     private String content;
     @Column
     private String image;
-    @ManyToOne
-    @JoinColumn(name = "userId", referencedColumnName = "user_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
     private User user;
 }

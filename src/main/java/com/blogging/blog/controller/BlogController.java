@@ -5,10 +5,7 @@ import com.blogging.blog.service.BlogService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -36,7 +33,7 @@ public class BlogController {
         return blogService.getAuthorDetails(blogId).toString();
     }
 
-    @PutMapping("/blog/update")
+    @PutMapping("/blog/publish")
     public String publishBlog(@Valid @RequestBody Blog blog){
         if(blogService.publishBlog(blog))
             return "Published blog " + blog.toString();
