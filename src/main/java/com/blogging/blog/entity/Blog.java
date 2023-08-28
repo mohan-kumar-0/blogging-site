@@ -17,7 +17,8 @@ public class Blog {
     private String content;
     @Column
     private String image;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ToString.Exclude
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User user;
 }

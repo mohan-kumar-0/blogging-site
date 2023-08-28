@@ -23,6 +23,7 @@ public class User {
     private String email;
     @Column(nullable = false)
     private String password;
+    @ToString.Exclude
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Blog> blogs;
 }
